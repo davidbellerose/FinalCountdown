@@ -67,4 +67,7 @@ function displayNumbers(numbers) {
   }
   // The next line inserts the html into the html page.
   document.getElementById("results").innerHTML = templateRows;
+
+  let codeLink = document.getElementById("codeLink");
+  codeLink.innerHTML = '<a href="code.html">See The Code</a>'
 }
