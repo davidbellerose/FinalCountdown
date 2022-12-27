@@ -25,7 +25,6 @@ function getValues() {
   } else {
     // Call the generateNumbers function with the start and end values
     // passed via the arguments and assign it to the numbers variable.
-
     let numbers = generateNumbers(startValue, endValue);
 
     // Call the displayNumbers function and pass the numbers argument to it.
@@ -49,7 +48,7 @@ function displayNumbers(numbers) {
 
   // The for loop iterates through the numbers array,
   // checks to see if the number is odd or even,
-  // then assigns the odd or even css classes to them respectively.
+  // then assigns the odd or even css class to them respectively.
 
   for (let i = 0; i <= numbers.length-1; i++) {
     let className = "even";

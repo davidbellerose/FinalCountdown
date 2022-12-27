@@ -54,17 +54,103 @@
         <div class="col-lg-8">
             <pre class="line-numbers">
                 <code class="language-javascript">
-                    // test function
-                    function one(){
-                        alert("one");
-                    }
+// The event listener for the button.
+document.getElementById("btnSubmit").addEventListener("click", getValues);
+
+// Get the values from the page.
+function getValues() {
+    let startValue = document.getElementById("startValue").value;
+    let endValue = document.getElementById("endValue").value;
+
+    // Change the values of the number fields to integers and round them to whole numbers.
+    startValue = Math.round(parseInt(startValue));
+    endValue = Math.round(parseInt(endValue));
+
+    // Check to see if the number values are in fact integers.
+    if (startValue &lt; 1 && startValue > 100) {
+    alert("Please choose a starting number between 1 and 100");
+
+    // Check to see if the ending number is between 0 and 100 and not a negative number
+    } else if ((endValue &lt; 0 && endValue > 100) || Math.sign(endValue) === -1) {
+    alert("Please choose an ending number between 0 and 100");
+
+    // Check to make sure the starting number is larger than the ending number.
+    } else if (startValue &lt;= endValue) {
+    alert("The starting number has to be larger than the ending number");
+
+    } else {
+    // Call the generateNumbers function with the start and end values
+    // passed via the arguments and assign it to the numbers variable.
+    let numbers = generateNumbers(startValue, endValue);
+
+    // Call the displayNumbers function and pass the numbers argument to it.
+    displayNumbers(numbers);
+    }
+}
+
+// This function generates the numbers in between the number values and assigns them to an array.
+function generateNumbers(sValue, eValue) {
+    let numbers = [];
+    let i = sValue;
+    for (i; i >= eValue; i--) {
+    numbers.push(i);
+    }
+    return numbers;
+}
+
+// This function will write the numbers to the html page.
+function displayNumbers(numbers) {
+    let templateRows = "";
+
+    // The for loop iterates through the numbers array,
+    // checks to see if the number is odd or even,
+    // then assigns the odd or even css class to them respectively.
+
+    for (let i = 0; i &lt;= numbers.length-1; i++) {
+    let className = "even";
+    let number = numbers[i];
+
+    if (number % 2 == 0) {
+        className = "even";
+    } else {
+        className = "odd";
+    }
+
+    // Now the below line puts that number in some html markup.
+    templateRows += `&lt;tr>&lt;td class="${className}" >${number}&lt;/td>&lt;/tr>
+    }
+    // The next line inserts the html into the html page.
+    document.getElementById("results").innerHTML = templateRows;
+}
                 </code>
             </pre>
         </div>
         <div class="col-lg-4">
-            <p>This code is structured in one function</p>
-            <h5>Hello World</h5>
-            <p>Hello World is a function that displays the text "Hello World"</p>
+            <h5>This code is structured in three functions.</h5>
+            <p>The first thing done was to add an event listener to the button so
+                the code will fire when the button is pressed.
+            </p>
+            <p>The next getValues function gets the values from the number input fields,
+                 that being the Starting Number and Ending Number fields. It also makes
+                 a few checks to see if the numbers entered are valid. Finally it will
+                 call on a couple of "helper" functions explained below.
+            <p>The first helper function is called generateNumbers. This function will
+                generate a list of numbers in between and including the starting and 
+                ending numbers and put them into an array to be passed on later.
+            </p>
+            <p>The second helper function is called displayNumbers. This will take the
+                numbers in the array, put them in some html code, and then inject them
+                into the web page for display.
+            </p>
+            <p>So once the getValues function gets the values from the number fields and
+                checks to make sure those inputs are valid, it calls the generateNumbers
+                function to generate the numbers array, then it calls the displayNumbers
+                function to display the array passed on from the generateNumbers function
+                into the web page.
+            </p>
+            <h5>Please <a href="#" alt="Contact Me">contact me</a> if you have any questions and/or would like to discuss
+                my skill set and qualifications.
+            </h5>
         </div>
     </div>
   </div>

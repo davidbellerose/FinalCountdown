@@ -11,7 +11,7 @@
     "build:vendor": "node utils/copyfolder.js ./src/assets/vendor ./dist/assets/vendor",
     "build:htmlcomp": "node utils/html-compiler.cjs",
     "build:pages": "copyfiles -e ./src/[_]*.html -e ./src/index.html -u 1 ./src/*.html dist",
-    "build:htmlmin": " html-minifier --input-dir ./dist --output-dir ./dist --collapse-whitespace --file-ext html",
+    "build:htmlmin": " html-minifier --input-dir ./dist --output-dir ./dist --collapse-whitespace --decode-entities --file-ext html",
     "build": "npm-run-all build:*",
     "watch:sass": "sass  --no-source-map --watch src/assets/scss:dist/assets/css",
     "watch:css": "onchange \"dist/assets/css/*.css\" -- npm run build:css",
