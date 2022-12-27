@@ -53,20 +53,29 @@
     <div class="row row-cols-1 row-cols-lg-2">
         <div class="col-lg-4 border-end border-2">
             <h1>Final Countdown: A Coding Project</h1>
-            <h4 class="lead">Enter a number in seconds to count down to zero.</h4>
+            <h4 class="lead">This app will display the numbers counting down from the Starting Number to the Ending Number.</h4>
             <h2 class="mt-5 border-bottom border-3">Instructions</h2>
-            <p>Enter a starting and ending value then click the start button.</p>
+            <ul>
+                <li>Enter a number between 100 and 1 in the Starting Number field.</li>
+                <li>Enter a number in the Ending Number field that is less than the Starting number and is not less than 0.</li>
+                <li>You must enter a valid number.</li>
+                <li>The Starting Number must be larger than the Ending Number.</li>
+                <li>You cannot enter a negative number.</li>
+                <li>You can only enter whole numbers, decimal numbers will be rounded down to whole numbers.</li>
+            </ul>
         </div>
         <div class="col-lg-8">
             <h5>Enter Values</h5>
-            <form class="row gy-2 gx-3">
+            <form class="row row-cols-1 row-cols-lg-2 gy-2 gx-3">
                 <div class="col">
-                    <input id="startValue" type="number" class="form-control" placeholder="Start Value" value="100" aria- label="Start Value">
+                    <label>Enter a number to start counting down from.</label>
+                    <input id="startValue" min="0" max="100" type="number" class="form-control" placeholder="Start Value" value="10" aria- label="Start Value">
                 </div>
                 <div class="col">
-                    <input id="endValue" type="number" class="form-control" placeholder="Start Value" value="0" aria- label="Start Value">
+                    <label>Enter an ending number.</label>
+                    <input id="endValue" min="0" max="100" type="number" class="form-control" placeholder="Start Value" value="0" aria- label="Start Value">
                 </div>
-                <div class="col-12 d-flex justify-content-start justify-content-lg-end">
+                <div class="col-12 col-lg-12 d-flex justify-content-start justify-content-lg-end">
                     <button type="button" id="btnSubmit" class="btn btn-dark btn-lg">Display Final Countdown</button>
                 </div>
             </form>
