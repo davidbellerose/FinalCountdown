@@ -1,9 +1,13 @@
-# JsSiteTemplate
-Js site template for js projects
+# Final Countdown
 
-update nav and social links
-update contact link
-remove dist from .gitignore
-publish
+## A javascript app that counts down from a number.
+
+ - HTML
+ - CSS
+ - SASS
+ - Bootstrap
+ - Javascript
+ - NodeJs
+ 
 
 
