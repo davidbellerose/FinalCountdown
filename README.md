@@ -1,8 +1,9 @@
 # JsSiteTemplate
 Js site template for js projects
 
-Todo
-social links
-app logo
-links to portfolio and github repo
+update nav and social links
+update contact link
+remove dist from .gitignore
+publish
+
 
