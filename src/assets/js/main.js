@@ -6,6 +6,10 @@ function getValues() {
   let startValue = document.getElementById("startValue").value;
   let endValue = document.getElementById("endValue").value;
 
+  // prevent html script injection
+  startValue = startValue.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  endValue = endValue.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
   // Change the values of the number fields to integers and round them to whole numbers.
   startValue = Math.round(parseInt(startValue));
   endValue = Math.round(parseInt(endValue));
