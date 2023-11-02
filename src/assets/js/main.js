@@ -21,11 +21,11 @@ function getValues() {
     // endValue = endValue.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
   // Check to see if the number values are in fact integers.
-  if (startValue < 1 && startValue > 100) {
+  if (startValue < 1 || startValue > 100) {
     alert("Please choose a starting number between 1 and 100");
 
   // Check to see if the ending number is between 0 and 100 and not a negative number
-  } else if ((endValue < 0 && endValue > 100) || Math.sign(endValue) === -1) {
+  } else if ((endValue < 0 || endValue > 100) || Math.sign(endValue) === -1) {
     alert("Please choose an ending number between 0 and 100");
 
   // Check to make sure the starting number is larger than the ending number.
